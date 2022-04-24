@@ -8,7 +8,7 @@ const isMac = process.platform === "darwin"
 function createMainWindow() {
   const mainWindow = new BrowserWindow({
     title: "Image Shrink",
-    width: 800,
+    width: 600,
     height: 600,
     icon: `${__dirname}/assets/icons/Icon_256x256.png`,
     resizable: isDev
