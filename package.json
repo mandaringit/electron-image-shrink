@@ -12,5 +12,11 @@
     "electron": "^18.1.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-mozjpeg" : "^8.0.0",
+    "slash": "^3.0.0"
   }
 }
