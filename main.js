@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require("electron")
+const { app, BrowserWindow, Menu, ipcMain } = require("electron")
 const path = require("path")
 process.env.NODE_ENV = "development"
 
@@ -112,6 +112,10 @@ app.on("ready", () => {
 	Menu.setApplicationMenu(mainMenu)
 
 	mainWindow.on("ready", () => (mainWindow = null))
+})
+
+ipcMain.on("image:minimize", (e, options) => {
+	console.log(options)
 })
 
 app.on("window-all-closed", () => {
