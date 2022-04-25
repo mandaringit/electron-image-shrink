@@ -11,12 +11,20 @@ let aboutWindow
 function createMainWindow() {
 	mainWindow = new BrowserWindow({
 		title: "Image Shrink",
-		width: 600,
+		width: isDev ? 700 : 500,
 		height: 600,
 		icon: path.join(__dirname, `assets/icons/Icon_256x256.png`),
 		resizable: isDev,
 		backgroundColor: "white",
+		webPreferences: {
+			nodeIntegration: true,
+			contextIsolation: false,
+		},
 	})
+
+	if (isDev) {
+		mainWindow.webContents.openDevTools()
+	}
 
 	mainWindow.loadFile("./app/index.html")
 }
